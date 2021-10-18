@@ -1,13 +1,13 @@
 export class Articulo{
-    titulo!:string;
-    descripcion!:string;
-    usuario!:string;
-    fecha!: Date;
+    userId!:string;
+    id!:string;
+    title!:string;
+    body!: Date;
 
     constructor(){
-        this.titulo = this.titulo;
-        this.descripcion = this.descripcion;
-        this.usuario = this.usuario;
-        this.fecha = this.fecha;
+        this.userId = this.userId;
+        this.id = this.id;
+        this.title = this.title;
+        this.body = this.body;
     }
 }
