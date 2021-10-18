@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Articulo } from '../models/articulo';
+import { User } from '../models/user';
 import { ArticulosService } from '../services/articulos.service';
 
 @Component({
@@ -9,11 +10,17 @@ import { ArticulosService } from '../services/articulos.service';
 })
 export class ArticuloDetalleComponent implements OnInit {
   articulo: Articulo = new Articulo();
-  constructor(public ArticuloInyectado:ArticulosService) { 
-    this.articulo = this.ArticuloInyectado.articulo;
+  user: User = new User();
+   articulos: Array<Articulo> = new Array<Articulo>();
+  constructor(public articuloInyectado:ArticulosService) { 
+    this.articulo = articuloInyectado.articulo;
   }
 
   ngOnInit(): void {
+    this.articuloInyectado.usuarioarticulo(this.articulo.userId).subscribe((result)=>{
+      this.user = result;
+    });
+
   }
 
 }

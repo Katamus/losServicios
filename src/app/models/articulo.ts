@@ -1,5 +1,5 @@
 export class Articulo{
-    userId!:string;
+    userId!:number;
     id!:string;
     title!:string;
     body!: Date;

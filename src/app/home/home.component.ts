@@ -12,18 +12,19 @@ import { UsuarioService } from '../services/usuario.service';
 export class HomeComponent implements OnInit {
 
   articulos: Array<Articulo> = new Array<Articulo>();
-  constructor(public usuarioInyectado:UsuarioService,public ArticuloInyectado:ArticulosService, private Ruta: Router ) {  }
+  constructor(public usuarioInyectado:UsuarioService,public articuloInyectado:ArticulosService, private Ruta: Router ) {  }
+
 
   ngOnInit(): void {
-    this.ArticuloInyectado.leerNoticias().subscribe((articulosDesdeApi)=>{
-      this.articulos = articulosDesdeApi;
+    this.articuloInyectado.leerNoticias().subscribe((articuloInyectado)=>{
+      this.articulos = articuloInyectado;
     });
   }
 
   irAlDetalle(articulo:Articulo){
-    this.ArticuloInyectado.articulo = articulo;
+    this.articuloInyectado.articulo = articulo;
     this.Ruta.navigateByUrl('/articulo-detalle');
-
   }
+
 
 }

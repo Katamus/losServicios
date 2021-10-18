@@ -2,16 +2,23 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Articulo } from '../models/articulo';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticulosService {
+  url:string = 'https://jsonplaceholder.typicode.com';
   articulo: Articulo = new Articulo();
   constructor(private http: HttpClient) {}
 
-  leerNoticias(): Observable<Articulo[]>
+  public leerNoticias(): Observable<Articulo[]>
   {
-    return this.http.get<Array<Articulo>>('https://jsonplaceholder.typicode.com/posts');
+    return this.http.get<Array<Articulo>>( this.url+'/posts');
   }
+
+  public usuarioarticulo(userId:number):Observable<User>{
+    return this.http.get<User>(this.url+'/users/'+userId);
+  }
+
 }
