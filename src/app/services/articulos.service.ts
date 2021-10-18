@@ -21,4 +21,8 @@ export class ArticulosService {
     return this.http.get<User>(this.url+'/users/'+userId);
   }
 
+  public crearArticulo(articulo:Articulo):Observable<Articulo>{
+    return this.http.post<Articulo>(this.url+'/posts',articulo);
+  }
+
 }

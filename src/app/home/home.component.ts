@@ -19,6 +19,14 @@ export class HomeComponent implements OnInit {
     this.articuloInyectado.leerNoticias().subscribe((articuloInyectado)=>{
       this.articulos = articuloInyectado;
     });
+
+    let articulo = new Articulo();
+    articulo.userId = 4;
+    articulo.title="Elemento de prueba";
+    articulo.body="Este elemento se creo al cargar la pagina";
+    this.articuloInyectado.crearArticulo(articulo).subscribe((result)=>{
+      this.articulos.push(result);
+    });
   }
 
   irAlDetalle(articulo:Articulo){

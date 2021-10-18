@@ -2,7 +2,7 @@ export class Articulo{
     userId!:number;
     id!:string;
     title!:string;
-    body!: Date;
+    body!: string;
 
     constructor(){
         this.userId = this.userId;
