@@ -24,9 +24,15 @@ export class HomeComponent implements OnInit {
     articulo.userId = 4;
     articulo.title="Elemento de prueba";
     articulo.body="Este elemento se creo al cargar la pagina";
-    this.articuloInyectado.crearArticulo(articulo).subscribe((result)=>{
-      this.articulos.push(result);
-    });
+    
+    //se acomoda para emular que se creo el articulo netamente visual
+    console.log(this.articuloInyectado.articulo);
+    
+    if(this.articuloInyectado.articulo.id != null ){
+      this.articulos.push(this.articuloInyectado.articulo);
+      this.articuloInyectado.articulo = new Articulo();
+    }
+    
   }
 
   irAlDetalle(articulo:Articulo){

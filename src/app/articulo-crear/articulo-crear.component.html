@@ -1,0 +1,31 @@
+<div class="container">
+    <form [formGroup]="formulario" >
+        <div class="mb-3" >
+            <label class="form-label" class="tituloFormulario">Title: </label>
+            <input type="text" class="form-control" formControlName="title">
+            <div class="alert alert-danger" role="alert" *ngIf="formulario.controls['title'].invalid && formulario.controls['title'].dirty">
+                <span *ngIf="formulario.controls['title'].errors?.requerid" >Campo requerido</span>
+                <span *ngIf="formulario.controls['title'].dirty || formulario.controls['title'].errors?.pattern" >Campo requerido space</span>
+            </div>
+        </div>
+        <div class="mb-3" >
+            <label class="form-label" class="tituloFormulario">body: </label>
+            <textarea class="form-control" rows="3" formControlName="body" ></textarea>
+            <div class="alert alert-danger" role="alert" *ngIf="formulario.controls['body'].invalid && formulario.controls['body'].dirty ">
+                <span *ngIf="formulario.controls['body'].errors?.requerid" >Campo requerido</span>
+                <span *ngIf="formulario.controls['title'].dirty || formulario.controls['title'].errors?.pattern" >Campo requerido space</span>
+            </div>
+        </div>
+        <div class="mb-3" >
+            <label class="form-label" class="tituloFormulario">User: </label>
+            <select class="form-select" aria-label="Default select example" formControlName="userId" >
+                <option value="" selected>Open this select menu</option>
+                <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.name}}</option>
+            </select>
+            <div class="alert alert-danger" role="alert" *ngIf="formulario.controls['userId'].invalid && formulario.controls['userId'].dirty">
+                <span *mgId="formulario.controls['userId'].errors?.requerid">Campo requerido</span>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!formulario.valid" class="btn btn-primary" (click)="agregar()" >Submit</button>
+    </form>
+</div>

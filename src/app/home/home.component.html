@@ -1,6 +1,6 @@
 <div class="container" >
     <div class="articulo" *ngFor="let articulo of articulos">
-        <h4 (click)="irAlDetalle(articulo)" >{{articulo.title}}</h4>
+        <h4 (click)="irAlDetalle(articulo)" >{{articulo.title}}-{{articulo.id}}</h4>
         <p>{{articulo.body}}</p>
     </div>
 </div>

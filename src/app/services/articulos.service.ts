@@ -25,4 +25,8 @@ export class ArticulosService {
     return this.http.post<Articulo>(this.url+'/posts',articulo);
   }
 
+  public usuarios():Observable<Array<User>>{
+    return this.http.get<User[]>(this.url+'/users');
+  }
+
 }
