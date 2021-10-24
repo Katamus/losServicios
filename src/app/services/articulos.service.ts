@@ -29,4 +29,8 @@ export class ArticulosService {
     return this.http.get<User[]>(this.url+'/users');
   }
 
+  public borrarArticulo(id:number):Observable<any> {
+    return this.http.delete<any>(this.url+'/posts/'+id);
+  }
+
 }

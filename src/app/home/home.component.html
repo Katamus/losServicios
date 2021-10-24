@@ -1,6 +1,7 @@
 <div class="container" >
     <div class="articulo" *ngFor="let articulo of articulos">
-        <h4 (click)="irAlDetalle(articulo)" >{{articulo.title}}-{{articulo.id}}</h4>
+        <h4 (click)="irAlDetalle(articulo)" >{{articulo.title}} Di:{{articulo.id}}</h4>
         <p>{{articulo.body}}</p>
+        <button class="btn btn-danger" (click)="borrar(articulo.id)" >Borrar</button>
     </div>
 </div>

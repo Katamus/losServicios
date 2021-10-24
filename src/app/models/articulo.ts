@@ -1,6 +1,6 @@
 export class Articulo{
     userId!:number;
-    id!:string;
+    id!:number;
     title!:string;
     body!: string;
 

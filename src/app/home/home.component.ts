@@ -41,4 +41,12 @@ export class HomeComponent implements OnInit {
   }
 
 
+  borrar(id:number){
+    this.articuloInyectado.borrarArticulo(id).subscribe((datos)=>{
+      console.log(datos);
+      console.log("Eliminado correctamente");
+    });
+  }
+
+
 }
