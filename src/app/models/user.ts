@@ -14,5 +14,9 @@ export class User {
         this.phone = this.phone;
         this.website = this.website;
         this.company = this.company;
+        this.address = this.address;
+        this.phone = this.phone;
+        this.website = this.website;
+        this.company = this.company;
     }
 }

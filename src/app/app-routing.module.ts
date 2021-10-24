@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'articulo-detalle', component: ArticuloDetalleComponent
   },
   {
-    path: 'articulo-crear', component: ArticuloCrearComponent
+    path: 'articulo-crear/:esNuevo', component: ArticuloCrearComponent
   }
 ];
 

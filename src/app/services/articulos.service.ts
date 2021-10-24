@@ -14,23 +14,27 @@ export class ArticulosService {
 
   public leerNoticias(): Observable<Articulo[]>
   {
-    return this.http.get<Array<Articulo>>( this.url+'/posts');
+    return this.http.get<Array<Articulo>>( `${this.url}/posts`);
   }
 
   public usuarioarticulo(userId:number):Observable<User>{
-    return this.http.get<User>(this.url+'/users/'+userId);
+    return this.http.get<User>(`${this.url}/users/${userId}`);
   }
 
   public crearArticulo(articulo:Articulo):Observable<Articulo>{
-    return this.http.post<Articulo>(this.url+'/posts',articulo);
+    return this.http.post<Articulo>(`${this.url}/posts`,articulo);
   }
 
   public usuarios():Observable<Array<User>>{
-    return this.http.get<User[]>(this.url+'/users');
+    return this.http.get<User[]>(`${this.url}/users`);
   }
 
   public borrarArticulo(id:number):Observable<any> {
-    return this.http.delete<any>(this.url+'/posts/'+id);
+    return this.http.delete<any>(`${this.url}/posts/id`);
+  }
+
+  public actualizarArticulo(articulo:Articulo) : Observable<Articulo>{
+    return this.http.put<Articulo>(`${this.url}/posts/${ articulo.id}`,articulo);
   }
 
 }

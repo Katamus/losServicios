@@ -3,5 +3,5 @@
     <p>{{articulo.body}}</p>
     <h3>{{user.name}}</h3>
     <h6>usuario: {{user.username}}</h6>
-    <p>Calle: {{user.address.street}} ciudad {{user.address.city}}</p>
+    <p *ngIf="user.address !== undefined" >Calle: {{user.address.street}} ciudad {{user.address.city}}</p>
 </div>

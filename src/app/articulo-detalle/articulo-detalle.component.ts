@@ -11,8 +11,10 @@ import { ArticulosService } from '../services/articulos.service';
 export class ArticuloDetalleComponent implements OnInit {
   articulo: Articulo = new Articulo();
   user: User = new User();
-   articulos: Array<Articulo> = new Array<Articulo>();
-  constructor(public articuloInyectado:ArticulosService) { 
+  articulos: Array<Articulo> = new Array<Articulo>();
+
+  constructor(public articuloInyectado:ArticulosService) {
+    console.log(this.user);
     this.articulo = articuloInyectado.articulo;
   }
 

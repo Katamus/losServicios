@@ -1,7 +1,11 @@
 <div class="container">
+    <h2 *ngIf="esNuevo" >Agregar</h2>
+    <h2 *ngIf="!esNuevo" >Editar</h2>
+
     <form [formGroup]="formulario" >
         <div class="mb-3" >
             <label class="form-label" class="tituloFormulario">Title: </label>
+            <input type="hidden" class="form-control" formControlName="id" >
             <input type="text" class="form-control" formControlName="title">
             <div class="alert alert-danger" role="alert" *ngIf="formulario.controls['title'].invalid && formulario.controls['title'].dirty">
                 <span *ngIf="formulario.controls['title'].errors?.requerid" >Campo requerido</span>
@@ -26,6 +30,7 @@
                 <span *mgId="formulario.controls['userId'].errors?.requerid">Campo requerido</span>
             </div>
         </div>
-        <button type="submit" [disabled]="!formulario.valid" class="btn btn-primary" (click)="agregar()" >Submit</button>
+        <button *ngIf="esNuevo" type="submit" [disabled]="!formulario.valid" class="btn btn-primary" (click)="agregar()" >Submit</button>
+        <button *ngIf="!esNuevo" type="submit" [disabled]="!formulario.valid" class="btn btn-success" (click)="editar()" >Editar</button>
     </form>
 </div>

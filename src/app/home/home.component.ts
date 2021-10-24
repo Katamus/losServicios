@@ -48,5 +48,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  actualizar(articulo:Articulo){
+    this.articuloInyectado.articulo = articulo;
+    this.Ruta.navigateByUrl('/articulo-crear/false');
+
+  }
 
 }
